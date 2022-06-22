@@ -49,7 +49,8 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 
 gem 'devise'
-
+gem "rolify"
+gem 'byebug'
 gem 'jsbundling-rails'  # needed for bootstrap javascript
 gem 'cssbundling-rails' # Install bootstrap 5
 

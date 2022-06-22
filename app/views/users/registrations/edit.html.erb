@@ -4,6 +4,16 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autocomplete: "first-name", placeholder: "Enter your First name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autocomplete: "last-name", placeholder: "Enter your last name"  %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -29,6 +39,16 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender, placeholder: "Enter your gender" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone, autocomplete: "new-phone", placeholder: "Enter your phone number" %>
   </div>
 
   <div class="actions">
