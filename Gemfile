@@ -48,9 +48,18 @@ gem "sassc-rails"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
+# devise gem for authenq
 gem 'devise'
+
+#rolify gem for role decide
 gem "rolify"
+
+#byebug for debugging
 gem 'byebug'
+
+# kaminari for Pagination
+gem 'kaminari'
+
 gem 'jsbundling-rails'  # needed for bootstrap javascript
 gem 'cssbundling-rails' # Install bootstrap 5
 
