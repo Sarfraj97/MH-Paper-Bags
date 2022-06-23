@@ -9,6 +9,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body.light_theme {
+  color: #000;
+  background: #f1f1f1;
+}
+
 .login-box {
   position: absolute;
   top: 50%;
@@ -16,7 +21,7 @@ body {
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
+  background: rgba(8, 8, 8, 0.5);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
@@ -164,4 +169,29 @@ body {
   50%,100% {
     bottom: 100%;
   }
+}
+.light_theme .login-box {
+  background-color: #fff;
+}
+.light_theme .login-box h2 {
+  color: #000;
+}
+.light_theme .login-box .user-box label {
+  color: #000;
+}
+.light_theme .login-box .user-box input {
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.light_theme .anchor_btn {
+  color: #000;
+}
+.light_theme .login-box a:hover, 
+.light_theme .login-box form .login_btn:hover {
+  border-color: #03e9f4;
+}
+.light_theme .login-box form a, 
+.light_theme .login-box form .login_btn {
+  font-weight: bold;
+  border: solid 2px;
 }
