@@ -28,3 +28,7 @@ User.find_or_initialize_by(email: 'demo_user@yopmail.com').tap do |u|
   u.save
 end
 
+10.times do |i|
+  i = i+1
+  Product.find_or_create_by!(title: "MH-Paper-Bags #{i}", available: 201, price: 1000, rating: 3.5, description: "Hello this is MH-Paper-Bags #{i}", size: "#{i}", minimun_order_stock: 10) 
+end
