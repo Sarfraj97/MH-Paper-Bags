@@ -1,0 +1,44 @@
+<div id="<%= dom_id product %>">
+  <p>
+    <strong>Title:</strong>
+    <%= product.title %>
+  </p>
+
+  <p>
+    <strong>Available:</strong>
+    <%= product.available %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= product.price %>
+  </p>
+
+  <p>
+    <strong>Rating:</strong>
+    <%= product.rating %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= product.description %>
+  </p>
+
+  <p>
+    <strong>Size:</strong>
+    <%= product.size %>
+  </p>
+
+  <p>
+    <strong>Minimun order stock:</strong>
+    <%= product.minimun_order_stock %>
+  </p>
+
+  <p>
+    <strong>Images:</strong>
+    <% product.images.each do |image| %>
+      <div><%= link_to image.filename, image %></div>
+    <% end %>
+  </p>
+
+</div>

@@ -8,12 +8,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= favicon_link_tag asset_path('MHpaper.jpeg') %>
   </head>
 
-  <body>
+  <body class="light_theme" data-controller="hello">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <p class="navbar-text float-right"></p>
+    <label id="switch" class="switch">
+      <input type="checkbox" data-action="click->hello#change_theme">
+      <span class="slider round"></span>
+    </label>
     <%= yield %>
   </body>
 </html>

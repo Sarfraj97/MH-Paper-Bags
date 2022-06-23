@@ -1,13 +1,18 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {}
-  handleLoginClick(e) {
-    e.preventDefault();
-    var form = document.getElementById("new_user");
-    var button = document.getElementById("login_form_btn");
-    button.addEventListener("click", function () {
-      form.submit();
-    });
+  connect() {
+    
+  }
+  change_theme() {
+    var bodyTag = document.body; 
+    if ( bodyTag.classList.contains('dark_theme') ) {
+      bodyTag.classList.remove('dark_theme');
+      bodyTag.classList.add('light_theme');
+    }
+    else {
+      bodyTag.classList.remove('light_theme');
+      bodyTag.classList.add('dark_theme');
+    }
   }
 }
