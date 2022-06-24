@@ -11,5 +11,6 @@
   <% end %>
 </div>
 
+<%= paginate @products %>
 <%= link_to "New product", new_product_path %>
 <%= link_to "logout", destroy_user_session_path, method: :delete, class: "login_btn"%>

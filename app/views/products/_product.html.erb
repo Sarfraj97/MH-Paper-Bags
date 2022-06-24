@@ -36,9 +36,10 @@
 
   <p>
     <strong>Images:</strong>
+    <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
     <% product.images.each do |image| %>
       <div><%= link_to image.filename, image %></div>
+      <div></div>  
     <% end %>
   </p>
-
 </div>
