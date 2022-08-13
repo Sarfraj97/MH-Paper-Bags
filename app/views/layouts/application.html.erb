@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= favicon_link_tag asset_path('MHpaper.jpeg') %>
   </head>
-
+  <% if current_user.present? %>  
+    <%= link_to "logout", destroy_user_session_path, method: :delete, class: "login_btn"%>
+  <% end %>
   <body class="light_theme" data-controller="hello">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

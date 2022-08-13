@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, only: %i[ new ]
   # GET /products or /products.json
   def index
     @products = Product.limit(10).page(params[:page]).per(5)

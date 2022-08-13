@@ -15,4 +15,5 @@ export default class extends Controller {
       bodyTag.classList.add('dark_theme');
     }
   }
-}
+  open_interest_popup(){}
+}  
