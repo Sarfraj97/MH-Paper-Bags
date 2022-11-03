@@ -1,57 +1,63 @@
-<%= form_with(model: product) do |form| %>
-  <% if product.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<div class="pt-6 grid place-items-center h-screen">
+  <div class="w-full max-w-md ">
+    <%= form_with(model: product, html:{class:"bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"}) do |form| %>
+      <% if product.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-        <% product.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% product.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+      <div class="mb-4">
+        <%= form.label :title, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.text_field :title, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :available, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.number_field :available, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :price, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.number_field :price, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :rating, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.number_field :rating, step: :any, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :description, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.text_area :description, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :size, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.text_field :size, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :minimun_order_stock, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.number_field :minimun_order_stock, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :images, class:"block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.file_field :images, multiple: true, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <%= form.submit "Submit", class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+        <%= link_to "Back to products", products_path, class:"inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" %>
+      </div>
+
+    <% end %>
   </div>
-
-  <div>
-    <%= form.label :available, style: "display: block" %>
-    <%= form.number_field :available %>
-  </div>
-
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.number_field :rating, step: :any %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :size, style: "display: block" %>
-    <%= form.text_field :size %>
-  </div>
-
-  <div>
-    <%= form.label :minimun_order_stock, style: "display: block" %>
-    <%= form.number_field :minimun_order_stock %>
-  </div>
-
-  <div>
-    <%= form.label :images, style: "display: block" %>
-    <%= form.file_field :images, multiple: true %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

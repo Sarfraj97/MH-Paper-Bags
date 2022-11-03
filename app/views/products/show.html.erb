@@ -1,38 +1,57 @@
-
-<div class="pt-6 grid place-items-center h-screen">
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <img class="w-full" src="https://picsum.photos/200" alt="product image">
-    <% @product.images.each do |image| %>
-      <div><%= link_to image.filename, image %></div>
-    <% end %>
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2"><%= @product.title %></div>
-    <div class="flex items-center mt-2.5 mb-5">
-      <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-      <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-      <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-      <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-      <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-      <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3"><%= @product.rating %></span>
+<div class="grid place-items-center h-screen">
+  <div class="relative min-h-screen flex flex-col items-center justify-center ">
+    <div class="container">
+      <div class="max-w-md w-full bg-gray-900 shadow-lg rounded-xl p-6">
+        <div class="flex flex-col ">
+          <div class="">
+            <div class="relative h-62 w-full mb-3">
+              <img class=" w-full   object-fill  rounded-2xl" src="https://picsum.photos/200" alt="product image">
+              <% @product.images.each do |image| %>
+                <div><%= link_to image.filename, image %></div>
+              <% end %>
+            </div>
+            <div class="flex-auto justify-evenly">
+              <div class="flex flex-wrap ">
+                <div class="w-full flex-none text-sm flex items-center text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span class="text-gray-400 whitespace-nowrap mr-3"><%= @product.rating %> </span><span class="mr-2 text-gray-400"><%= @product.title %></span>
+                </div>
+                <div class="flex items-center w-full justify-between min-w-0 ">
+                  <h2 class="text-lg mr-auto cursor-pointer text-gray-200 hover:text-purple-500 truncate "><%= @product.description %></h2>
+                  <div class="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
+                    INSTOCK: <%= @product.minimun_order_stock %></div>
+                </div>
+              </div>
+              <div class="text-xl text-white font-semibold mt-1"><%= "$ #{@product.price}" %></div>
+              <div class="lg:flex  py-4  text-sm text-gray-600">
+                <div class="flex-1 inline-flex items-center  mb-3">
+                  <span class="text-secondary whitespace-nowrap mr-3">Available</span>
+                  <div class="cursor-pointer text-gray-400 ">
+                    <span class="hover:text-purple-500 p-1 py-0"><%= @product.available %></span>
+                  </div>
+                </div>
+                <div class="flex-1 inline-flex items-center mb-3">
+                  <span class="text-secondary whitespace-nowrap mr-3">Size</span>
+                  <div class="cursor-pointer text-gray-400 ">
+                    <span class="hover:text-purple-500 p-1 py-0"><%= @product.size %></span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex space-x-2 text-sm font-medium justify-start">
+                <%= link_to "place order", new_order_path(product_id: @product.id), class:"transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-blue-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 " %>
+                <% if user_signed_in? %>
+                  <% if current_user.has_role?(:admin) %>
+                    <%= link_to "Edit", edit_product_path(@product), class:"transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-red-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 " %>
+                    <%= link_to "Destroy", @product, data: { turbo_method: :delete }, class:"transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-yellow-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 " %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="text-gray-700 text-base">
-      <%= @product.description %>
-    </p>
   </div>
-  <div class="px-6 pt-4 pb-2">
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Available: <%= @product.available %></span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Size: <%= @product.size %></span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Price: <%= "$ #{@product.price}" %></span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Minimun order stock: <%= @product.minimun_order_stock %></span>
-  </div>
-  <div class="px-6 pt-4 pb-4">
-    <%= link_to "place order", new_order_path, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
-  </div>
-</div>
-</div>
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
 </div>
