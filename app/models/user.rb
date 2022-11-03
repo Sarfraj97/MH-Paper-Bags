@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   after_create :assign_default_role
   validates :phone, uniqueness: true
-  has_many :orders
+  has_many :orders, dependent: :destroy
   has_many :products, through: :orders
 
     def email_required?
