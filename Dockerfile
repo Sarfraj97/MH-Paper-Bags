@@ -16,4 +16,4 @@ ARG DEFAULT_PORT 5000
 
 EXPOSE ${DEFAULT_PORT}
 
-CMD ["rails","server", '--host', '0.0.0.0', '--port', '3000']
+CMD ["rails","server",'--host','0.0.0.0','--port', '3000']
