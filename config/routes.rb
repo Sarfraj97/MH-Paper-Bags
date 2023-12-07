@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_interests
 
   resources :products, :orders
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -26,13 +26,14 @@
     <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Minimun order stock: <%= @product.minimun_order_stock %></span>
   </div>
   <div class="px-6 pt-4 pb-4">
-    <%= link_to "place order", new_order_path, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
+    <%= link_to "place enquiry", new_user_interest_path, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
   </div>
 </div>
 </div>
 <div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
   <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+  <%if current_user%>
+    <%= link_to "Edit this product", edit_product_path(@product) %> |
+    <%= button_to "Destroy this product", @product, method: :delete %>
+  <%end%>
 </div>

@@ -2,10 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
-  def index
-    unless current_user
-      redirect_to user_session_url if params[:page].present?
-    end
+  def index    
     @products = Product.limit(10).page(params[:page]).per(6)
     respond_to do |format|
       format.html
