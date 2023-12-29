@@ -13,7 +13,7 @@ development:
 test:
   <<: *default
   database: MH_Paper_Bags_test
-# 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
+# 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
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -36,6 +36,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: MH_Paper_Bags_production
   username: MH_Paper_Bags
-  password: <%= ENV["MH_PAPER_BAGS_DATABASE_PASSWORD"] || postgres %>
+  password: <%= ENV["MH_PAPER_BAGS_DATABASE_PASSWORD"] %>
