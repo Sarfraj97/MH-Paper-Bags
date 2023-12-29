@@ -1,8 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # port: 5432
-  # host: localhost
+  # port: 5432  
   # username: postgres
   # password: postgres
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -14,7 +13,7 @@ development:
 test:
   <<: *default
   database: MH_Paper_Bags_test
-# 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
+# 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
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -37,7 +36,8 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
-  database: MH_Paper_Bags_production
-  username: MH_Paper_Bags
-  password: <%= ENV["MH_PAPER_BAGS_DATABASE_PASSWORD"] %>
+  url: postgresql://postgres:A4DGBaGBD65GE1EE4a6gE3CD-B3gCGf*@viaduct.proxy.rlwy.net:31848/railway
+  database: railway
+  host: viaduct.proxy.rlwy.net
+  username: postgres
+  password: A4DGBaGBD65GE1EE4a6gE3CD-B3gCGf*
