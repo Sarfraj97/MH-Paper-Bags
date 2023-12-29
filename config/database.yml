@@ -41,3 +41,4 @@ production:
   host: viaduct.proxy.rlwy.net
   username: postgres
   password: A4DGBaGBD65GE1EE4a6gE3CD-B3gCGf*
+  port: 31848
