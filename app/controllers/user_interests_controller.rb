@@ -1,6 +1,7 @@
 class UserInterestsController < ApplicationController
   before_action :set_user_interest, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: %i[ new create ]
+  before_action :set_product
 
   # GET /user_interests or /user_interests.json
   def index
@@ -67,5 +68,9 @@ class UserInterestsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_interest_params
       params.fetch(:user_interest, {})
+    end
+
+    def set_product
+      @product = Product.find(params[:product_id])
     end
 end
