@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :user_interests
+  # resources :user_interests
 
-  resources :products, :orders
+  resources :products do
+    resources :user_interests
+  end
+  
+  
+  resources :orders
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_for :users, controllers: {
     sessions: 'users/sessions',
